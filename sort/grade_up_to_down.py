@@ -16,7 +16,7 @@ if __name__ == '__main__':
         names.append(inputs[0])
         grades.append(inputs[1])
 
-    # 딕셔너리 컴프리헨션
+    # dictinary comprehension
     dicts = {n : grades[i] for i, n in enumerate(names)}
 
     print_student(dicts)
