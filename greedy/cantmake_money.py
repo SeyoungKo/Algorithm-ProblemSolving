@@ -1,5 +1,5 @@
 # 만들 수 없는 금액
-# N개의 동전이 주어질 때 만들 수 없는 최소금액 구하
+# N개의 동전이 주어질 때 만들 수 없는 최소금액 구하기
 if __name__ == '__main__':
     print('N: ', end='')
     n = input()
@@ -9,7 +9,7 @@ if __name__ == '__main__':
     num = sorted(num)
 
     val = 0
-    target = 1기
+    target = 1
 
     for n in num:
         if n <= target:
@@ -18,6 +18,4 @@ if __name__ == '__main__':
             break
 
     print(target)
-
-
 
