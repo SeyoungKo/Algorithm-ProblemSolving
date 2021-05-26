@@ -1,6 +1,6 @@
 # 무지의 먹방 라이브
 # food_time만큼의 음식 개수와 각 음식의 타임이 주어질 때 k 시간 후에 먹어야 할 음식 번호는 ?
-import headq
+import heapq
 
 def get_time(food, k):
     num = 0
