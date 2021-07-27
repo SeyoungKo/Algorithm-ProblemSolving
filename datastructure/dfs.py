@@ -18,17 +18,16 @@ def dfs(graph, v, visited):
         print("이미 탐색완료한 노드:", i)
 
 def stack_dfs(graph, start):
-    stack = []
-    visit = []
+    stack, visited = [], []
     stack.append(start)
 
     while stack:
-        v = stack.pop()
-        if v not in visit:
-            visit.append(v)
-            stack.extend(reversed(graph[v]))
+        node = stack.pop()
+        if node not in visited:
+            visited.append(node)
+            stack.extend(graph[node])
 
-    print(visit)
+    return visited
 
 if __name__ == '__main__':
     # graph[i]의 노드를 방문한 노드인지 아닌지 탐색한다
@@ -52,5 +51,18 @@ if __name__ == '__main__':
         [2, 6, 8],
         [1, 7]
     ]
+
+    graph_alpha = dict()
+    graph_alpha['A'] = ['B', 'C']
+    graph_alpha['B'] = ['A', 'D']
+    graph_alpha['C'] = ['A', 'G', 'H', 'I']
+    graph_alpha['D'] = ['B', 'E', 'F']
+    graph_alpha['E'] = ['D']
+    graph_alpha['F'] = ['D']
+    graph_alpha['G'] = ['C']
+    graph_alpha['H'] = ['C']
+    graph_alpha['I'] = ['C', 'J']
+    graph_alpha['J'] = ['I']
+
     # dfs(graph, 1, visited)
-    stack_dfs(graph, 1)
+    print(stack_dfs(graph_alpha, 'A'))
