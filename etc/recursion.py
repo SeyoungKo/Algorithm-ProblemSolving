@@ -12,6 +12,35 @@ def factorial_rec(n):
         return 1
     return factorial_rec(n - 1) * n
 
+# 회문 판별하기
+def palindrome(word):
+    if len(word) == 1:
+        return '회문입니다'
+    if word[0] == word[-1:]:
+        return palindrome(word[1:-1])
+    else:
+        return '회문이 아닙니다'
+
+# 홀/짝 판별
+def oddeven(num):
+    print(num)
+    if num == 1:
+        return num
+    if num % 2 == 0:
+        return oddeven(num // 2)
+    else:
+        return oddeven((3 * num) + 1)
+
+# 1,2,3의 합으로 나타내는 경우의 수 구하기
+def number_of_case(num):
+    if num == 1:
+        return 1
+    elif num == 2:
+        return 2
+    elif num == 3:
+        return 4
+    return number_of_case(num - 1) + number_of_case(num - 2) + number_of_case(num - 3)
+
 # 리스트 뒤집기
 def reverse_list(param):
     if len(param) == 1:
@@ -80,3 +109,9 @@ if __name__ == '__main__':
     start_peg = 1
     end_peg = 3
     hanoi(num, start_peg, end_peg)
+
+    word = 'level'
+    print(palindrome(word))
+
+    oddeven(3)
+    print(number_of_case(5))
