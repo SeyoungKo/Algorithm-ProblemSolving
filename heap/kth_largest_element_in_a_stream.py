@@ -8,14 +8,14 @@ class KthLargest:
         self.heap = nums
         heapq.heapify(self.heap)
 
-        while len(self.heap) > k:
-            heapq.heappop(self.heap)
+        if k < len(self.heap):
+           heapq.heappop(self.heap)
 
     def add(self, val):
-        if not self.heap or len(self.heap) < self.k:
+        if len(self.heap) < self.k:
             heapq.heappush(self.heap, val)
-        elif val > self.heap[0]:
-            heapq.heappushpop(self.heap, val) # push-pop
+        else:
+            heapq.heappushpop(self.heap, val)
         return self.heap[0]
 
 if __name__ == '__main__':
