@@ -19,13 +19,13 @@ def save_data(data, value):
     # 특정 해시 공간에 이미 값이 저장되어 있으면
     if hash_table[hash_addr] != 0:
         # 특정 해시 공간에 이미 값이 저장되어 있으면 몇개 저장되어 있는지 확인
-        for idx in range(len(hash_table[hash_addr])):
+        for idx_key in range(len(hash_table[hash_addr])):
             # 특정 해시 공간의 링크드리스트 값들을 순회하고 일치하는 key가 있으면 value에 값을 덮어쓴다
-            if hash_table[hash_addr][idx][0] == hash_key:
-                hash_table[hash_addr][idx][1] = value
+            if hash_table[hash_addr][idx_key][0] == hash_key:
+                hash_table[hash_addr][idx_key][1] = value
                 return
         # 저장하려는 특정 해시 공간의 링크드리스트에 일치하는 key값이 없으면 리스트에 key, value를 추가한다
-        hash_table[hash_addr].append([idx, value])
+        hash_table[hash_addr].append([idx_key, value])
     # 해시 공간에 값이 저장되어 있지 않으면
     else:
         # [hash_key, value] 형태로 저장
@@ -39,10 +39,10 @@ def read_data(data):
     # Hash Table에 한개 이상 값이 저장되어 있을 경우
     if hash_table[hash_addr] != 0:
         # 링크드리스트로 되어 있는 특정 해시 주소의 값을 가져온다
-        for idx in range(len(hash_table[hash_addr])):
+        for idx_key in range(len(hash_table[hash_addr])):
             # 일치하는 주소가 있으면 value값을 가져온다
-            if hash_table[hash_addr][idx][0] == hash_key:
-                return hash_table[hash_addr][idx][1]
+            if hash_table[hash_addr][idx_key][0] == hash_key:
+                return hash_table[hash_addr][idx_key][1]
         # 조회되는 값이 없으면
         return None
     else:
