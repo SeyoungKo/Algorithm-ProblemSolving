@@ -13,4 +13,4 @@ class Solution:
 if __name__ == '__main__':
     strs = 'WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB'
     s = Solution()
-    print(s.song_decoder(strs))
+    print(s.song_decoder(strs)) 
