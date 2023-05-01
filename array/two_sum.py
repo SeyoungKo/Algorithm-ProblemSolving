@@ -3,12 +3,18 @@
 
 class Solution:
     def twoSum(self, nums, target):
-        check = {}
-        for i,num in enumerate(nums):
-            if num not in check:
-                check[target-num]=i
+        result = list()
+        cur = target
+        while nums:
+            if target >= max(nums) and cur > 0:
+                result.append(nums.index(max(nums)))
+                val = nums.pop(nums.index(max(nums)))
+                cur = cur - val
+            elif cur <= 0:
+                break
             else:
-                return [min(i,check[num]),max(i,check[num])]
+                _ = nums.pop(nums.index(max(nums)))
+        return result
 
 if __name__ == '__main__':
     nums = [2, 7, 11, 15]
