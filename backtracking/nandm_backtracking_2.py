@@ -26,4 +26,5 @@ def backTracking(result):
             visited[i] = False
             result.pop()
 
-backTracking([])
+if __name__ == '__main__':
+    backTracking([])
