@@ -18,8 +18,10 @@ def search_parts(saved, finds, start, end):
 
 if __name__ == '__main__':
     print("N: ", end='')
+    
     n = int(input())
     saved = list(map(int, input().split()))
+    
     sorted(saved)
 
     print("M: ", end='')
