@@ -7,7 +7,7 @@ class Solution:
         :param int:
         :return: int
         '''
-        
+
         l = [0] * n
         for i in customers:
             l[l.index(min(l))] += i

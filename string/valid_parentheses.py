@@ -6,7 +6,7 @@ class Solution:
         :param strs: str
         :return: bool
         '''
-        
+
         left, right = 0, 0
         for s in strs:
             if right > left:

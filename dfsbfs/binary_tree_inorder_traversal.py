@@ -1,4 +1,5 @@
 # Binary Tree Inorder Traversal (94)
+# 중위순회
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

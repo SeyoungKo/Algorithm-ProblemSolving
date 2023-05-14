@@ -7,7 +7,7 @@ class Solution:
         :param words: List
         :return: integer
         '''
-        allowed = set(allowed)
+        allowed = list(set(allowed))
         cnt = 0
 
         for word in words:

@@ -3,7 +3,7 @@ import heapq
 
 
 class Solution:
-    def findRelativeRanks_sort(self, score):
+    def findRelativeRanks_sort(s다elf, score):
         g = sorted(score, reverse=True)
         d = {}
         m = []
@@ -25,26 +25,25 @@ class Solution:
         heap = []
         heapq.heapify(heap)
 
-        n = len(score)
-        res = [n for _ in range(n)]
+        result = [_ for _ in range(len(score))]
 
-        for i, score in enumerate(score):
-            heapq.heappush(heap, (-score, i))
+        cnt = 0
+        for i, s in enumerate(score):
+            heapq.heappush(heap, (-s, i))
 
-        count = 0
         while heap:
-            score, i = heapq.heappop(heap)
-            count += 1
-            if count == 1:
-                res[i] = "Gold Medal"
-            elif count == 2:
-                res[i] = "Silver Medal"
-            elif count == 3:
-                res[i] = "Bronze Medal"
+            idx = heapq.heappop(heap)[1]
+            cnt += 1
+            if cnt == 1:
+                result[idx] = 'Gold Medal'
+            elif cnt == 2:
+                result[idx] = 'Silver Medal'
+            elif cnt == 3:
+                result[idx] = 'Bronze Medal'
             else:
-                res[i] = str(count)
+                result[idx] = cnt
 
-        return res
+        return result
 
 if __name__ == '__main__':
     # score = [5, 4, 3, 2, 1]

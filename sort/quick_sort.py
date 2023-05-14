@@ -32,23 +32,32 @@ def quick_sort(array, start, end):
     return arr
 
 
-def python_quickSort(arr):
-    if len(arr) <= 1:
-        return arr
+# def python_quickSort(arr):
+#     if len(arr) <= 1:
+#         return arr
+#
+#     pivot = arr[0]
+#     remains = arr[1:]
+#
+#     left_remains = [n for n in remains if n <= pivot]
+#     right_remains = [n for n in remains if n > pivot]
+#
+#     return python_quickSort(left_remains) + [pivot] + python_quickSort(right_remains)
 
-    pivot = arr[0]
-    remains = arr[1:]
+def quick_sort(data):
+    if len(data) <= 1:
+        return data
 
-    left_remains = [n for n in remains if n <= pivot]
-    right_remains = [n for n in remains if n > pivot]
+    pivot = data[0]
+    remains = data[1:]
+    max_arrs = [n for n in remains if n >= pivot]
+    min_arrs = [n for n in remains if n < pivot]
 
-    return python_quickSort(left_remains) + [pivot] + python_quickSort(right_remains)
-
+    return quick_sort(min_arrs) + [pivot] + quick_sort(max_arrs)
 
 if __name__ == '__main__':
     arr = [3, 7, 9, 1, 0, 3, 5, 3, 6, 2, 4, 3, 8]
 
-    arr = quick_sort(arr, 0, len(arr) - 1)
+    # arr = quick_sort(arr, 0, len(arr) - 1)
     # arr2 = python_quickSort(arr)
-
-    print(arr)
+    print(quick_sort(arr))
