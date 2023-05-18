@@ -95,6 +95,7 @@ def hanoi(num, start_peg, end_peg):
         move_disk(num, start_peg, end_peg)
         hanoi(num - 1, mid_peg, end_peg)
 
+        
 if __name__ == '__main__':
     n = 123456
     print(sum_digit(n))
